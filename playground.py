@@ -1,4 +1,4 @@
-# playground.py
+
 
 
 from phi.model.groq import Groq
@@ -12,15 +12,12 @@ import os
 import phi
 from phi.playground import Playground, serve_playground_app
 
-
-# Load environment variables
 load_dotenv()
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 phi.api=os.getenv("API_KEY")
-# Define shared Groq model
+
 groq_model = Groq(id="llama-3.2-1b-preview")  # ✅ Use the latest supported model
 
-# Sub-agents
 web_search_agent = Agent(
     name="Web Search Agent",
     role="Search the web for information",
